@@ -6,6 +6,7 @@ Group:      System/Libraries
 License:    MIT
 URL:        http://www.x.org/
 Source0:    http://xorg.freedesktop.org/releases/individual/lib/%{name}-%{version}.tar.gz
+Source1001: packaging/libxau.manifest 
 Requires(post):  /sbin/ldconfig
 Requires(postun):  /sbin/ldconfig
 BuildRequires:  pkgconfig(xproto)
@@ -31,6 +32,7 @@ Description: %{summary}
 
 
 %build
+cp %{SOURCE1001} .
 
 %reconfigure
 # Call make instruction with smp support
@@ -53,6 +55,7 @@ rm -rf %{buildroot}
 
 
 %files
+%manifest libxau.manifest
 %defattr(-,root,root,-)
 %doc AUTHORS COPYING README ChangeLog
 %{_libdir}/libXau.so.6
@@ -60,6 +63,7 @@ rm -rf %{buildroot}
 
 
 %files devel
+%manifest libxau.manifest
 %defattr(-,root,root,-)
 %dir %{_includedir}/X11
 %{_includedir}/X11/Xauth.h

@@ -71,4 +71,3 @@ rm -rf %{buildroot}
 %{_includedir}/X11/*.h
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
-

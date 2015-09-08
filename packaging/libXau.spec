@@ -32,10 +32,8 @@ Provides: libxau-devel
 %description devel
 Description: %{summary}
 
-
 %prep
 %setup -q
-
 
 %build
 
@@ -47,6 +45,8 @@ make %{?jobs:-j%jobs}
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/license
+cp -af COPYING %{buildroot}/usr/share/license/%{name}
 %make_install
 
 # remove *.la files
@@ -62,6 +62,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
+/usr/share/license/%{name}
 %{_libdir}/*.so.*
 
 %files devel

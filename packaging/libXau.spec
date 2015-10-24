@@ -1,7 +1,7 @@
 Name:    libXau
 Summary: X.Org X11 libXau runtime library
-Version: 1.0.7
-Release: 1
+Version: 1.0.8
+Release: 2
 Group:   System/Libraries
 License: MIT
 URL:     http://www.x.org/
